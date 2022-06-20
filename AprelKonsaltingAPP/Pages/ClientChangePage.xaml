@@ -1,0 +1,101 @@
+﻿<Page x:Class="AprelKonsaltingAPP.Pages.ClientChangePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AprelKonsaltingAPP.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="586" d:DesignWidth="1286"
+      Title="Клиент">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+            <Button Click="ClientChange" Name="BTAdd" Grid.Row="1" Content="Сохранить Данные" FontSize="20" FontFamily="Segoe UI" Background="{StaticResource PositiveButton}" Foreground="{StaticResource ButtonText}" VerticalAlignment="Top" Margin="20">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="60" CornerRadius="20" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="350"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="300"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="ФОТО" FontSize="30" FontFamily="Segoe UI Bold" Foreground="{StaticResource BoldText}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10"/>
+                    <Image Source="{Binding image, TargetNullValue={StaticResource picture}}" Grid.Row="1" Margin="10" Width="300"/>
+                    <Button Name="Addphoto" Click="AddClientPhoto" Grid.Row="2" Content="Добавить фото" Foreground="{StaticResource ButtonText}" Background="{StaticResource OtherButton}" FontFamily="Segoe UI" FontSize="15" VerticalAlignment="Top" Margin="5">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="1" VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="ФАМИЛИЯ" FontFamily="Segoe UI Bold" FontSize="25" Foreground="{StaticResource BoldText}" HorizontalAlignment="Left" Margin="10"/>
+                    <TextBlock Grid.Row="1" Text="ИМЯ" FontFamily="Segoe UI Bold" FontSize="25" Foreground="{StaticResource BoldText}" HorizontalAlignment="Left" Margin="10"/>
+                    <TextBlock Grid.Row="2" Text="ОТЧЕСТВО" FontFamily="Segoe UI Bold" FontSize="25" Foreground="{StaticResource BoldText}" HorizontalAlignment="Left" Margin="10"/>
+                    <TextBlock Grid.Row="3" Text="ПОЛ" FontFamily="Segoe UI Bold" FontSize="25" Foreground="{StaticResource BoldText}" HorizontalAlignment="Left" Margin="10"/>
+                    <TextBlock Grid.Row="4" Text="ДАТА РОЖДЕНИЯ" FontFamily="Segoe UI Bold" FontSize="25" Foreground="{StaticResource BoldText}" HorizontalAlignment="Left" Margin="10"/>
+                    <TextBlock Grid.Row="5" Text="ТЕЛЕФОН" FontFamily="Segoe UI Bold" FontSize="25" Foreground="{StaticResource BoldText}" HorizontalAlignment="Left" Margin="10"/>
+                    <TextBlock Grid.Row="6" Text="ЭЛЕКТРОННАЯ ПОЧТА" FontFamily="Segoe UI Bold" FontSize="25" Foreground="{StaticResource BoldText}" HorizontalAlignment="Left" Margin="10"/>
+                </Grid>
+                <Grid Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                        <RowDefinition Height="50" MaxHeight="50"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Margin="0,5,0,5" CornerRadius="15" Width="350" BorderBrush="#FFABADB3" BorderThickness="1" VerticalAlignment="Center" UseLayoutRounding="True">
+                        <TextBox Text="{Binding surname}" FontFamily="Segoe UI" FontSize="26" BorderThickness="0" Background="Transparent"/>
+                    </Border>
+                    <Border Grid.Row="1" Margin="0,5,0,5" CornerRadius="15" Width="350" BorderBrush="#FFABADB3" BorderThickness="1" VerticalAlignment="Center" UseLayoutRounding="True">
+                        <TextBox Text="{Binding firstname}" FontFamily="Segoe UI" FontSize="26" BorderThickness="0" Background="Transparent"/>
+                    </Border>
+                    <Border Grid.Row="2" Margin="0,5,0,5" CornerRadius="15" Width="350" BorderBrush="#FFABADB3" BorderThickness="1" VerticalAlignment="Center" UseLayoutRounding="True">
+                        <TextBox Text="{Binding middlename}" FontFamily="Segoe UI" FontSize="26" BorderThickness="0" Background="Transparent"/>
+                    </Border>
+                    <Border Grid.Row="3" Margin="0,5,0,5" CornerRadius="15" Width="350" BorderBrush="#FFABADB3" BorderThickness="1" VerticalAlignment="Center" UseLayoutRounding="True">
+                        <TextBox Text="{Binding gender}" Name="tbGender" FontFamily="Segoe UI" FontSize="26" BorderThickness="0" Background="Transparent"/>
+                    </Border>
+                    <DatePicker  SelectedDate="{Binding DOB}" Grid.Row="4" FontFamily="Segoe UI" FontSize="26" Width="350" Margin="0,5,0,5"/>
+                    <Border Grid.Row="5" Margin="0,5,0,5" CornerRadius="15" Width="350" BorderBrush="#FFABADB3" BorderThickness="1" VerticalAlignment="Center" UseLayoutRounding="True">
+                        <TextBox Text="{Binding phonenumber}" FontFamily="Segoe UI" FontSize="26" BorderThickness="0" Background="Transparent"/>
+                    </Border>
+                    <Border Grid.Row="6" Margin="0,5,0,5" CornerRadius="15" Width="350" BorderBrush="#FFABADB3" BorderThickness="1" VerticalAlignment="Center" UseLayoutRounding="True">
+                        <TextBox Text="{Binding email}" FontFamily="Segoe UI" FontSize="26" BorderThickness="0" Background="Transparent"/>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
